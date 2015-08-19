@@ -1,0 +1,18 @@
+<div>
+    <button ng-if="card.self.PARENT">{{card.locations[card.self.PARENT].NAME}}</button>
+    <h3>{{card.self.NAME}}</h3>
+    <hr />
+        <h4>History: </h4>
+        <ul>
+           <li ng-repeat="N in card.self.HISTORY_NOTES">
+                {{N.NOTE}}
+            </li>
+        </ul>
+    <br />
+        <h4>Containing Locations:</h4>
+        <ul>
+            <li ng-repeat="C in card.self.CHILDREN">
+                <button class="linkLike">{{card.locations[C.ID].NAME}}</button>
+            </li>
+        </ul>
+</div>
